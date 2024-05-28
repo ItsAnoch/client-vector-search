@@ -42,7 +42,7 @@ export const initializeModel = async (
   model: string = 'Xenova/gte-small',
 ): Promise<void> => {
   if (model !== currentModel) {
-    const transformersModule = await import('@xenova/transformers');
+    const transformersModule = await import('@sroussey/transformers');
     const pipeline = transformersModule.pipeline;
     pipe = await pipeline('feature-extraction', model);
     currentModel = model;
